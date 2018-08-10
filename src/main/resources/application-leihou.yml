@@ -1,0 +1,6 @@
+spring:
+  rabbitmq:
+    host: rabbitmq-demo.gzleihou.cn
+    port: 15672
+    username: admin
+    password: admin

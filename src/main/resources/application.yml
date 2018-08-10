@@ -12,6 +12,8 @@ http :
                 exclude: /static/**,/templates/**
                 enabled: false
 spring :
+  profiles:
+    active: local
   datasource :
       name : so
       url : jdbc:mysql://mysql-demo.gzleihou.cn:3306/interview?useUnicode=true&characterEncoding=UTF-8&useSSL=false
