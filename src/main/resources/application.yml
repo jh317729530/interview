@@ -1,3 +1,4 @@
+
 server :
     tomcat :
       uri-encoding : UTF-8
@@ -42,11 +43,8 @@ spring :
     date-format : yyyy-MM-dd HH:mm:ss
     time-zone : GMT+8
 
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+
+
 
 # mybatis配置
 mybatis :
