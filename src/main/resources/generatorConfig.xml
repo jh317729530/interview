@@ -35,8 +35,8 @@
 
         <!-- 生成model模型，对应的包路径，以及文件存放路径(targetProject)，targetProject可以指定具体的路径,如./src/main/java，
             也可以使用“MAVEN”来自动生成，这样生成的代码会在target/generatord-source目录下 -->
-        <javaModelGenerator targetPackage="com.leihou.interview"
-                            targetProject="./src/main/java/com/leihou/interview/entity">
+        <javaModelGenerator targetPackage="com.leihou.interview.entity"
+                            targetProject="./src/main/java">
             <!-- 是否在当前路径下新加一层schema,eg：fase路径com.oop.eksp.user.model， true:com.oop.eksp.user.model.[schemaName] -->
             <property name="enableSubPackages" value="false" />
             <!-- 从数据库返回的值被清理前后的空格 -->
@@ -44,14 +44,14 @@
         </javaModelGenerator>
 
         <!--对应的mapper.xml文件 -->
-        <sqlMapGenerator targetPackage="com.leihou.interview"
-                         targetProject="./src/main/java/com/leihou/interview/mapper/xml">
+        <sqlMapGenerator targetPackage="com.leihou.interview.mapper.xml"
+                         targetProject="./src/main/java">
             <property name="enableSubPackages" value="false" />
         </sqlMapGenerator>
 
         <!-- 对应的Mapper接口类文件 -->
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.leihou.interview" targetProject="./src/main/java/com/leihou/interview/mapper">
+                             targetPackage="com.leihou.interview.mapper" targetProject="./src/main/java">
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
 
