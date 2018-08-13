@@ -37,7 +37,7 @@ public class UserControllerTest {
     @Before
     public void setup() {
         mockMvc = MockMvcBuilders.standaloneSetup(userController).build();
-        thread_num = 2000;
+        thread_num = 1000;
         method = "highConcurrencyCreate";
 //        method = "create";
     }
