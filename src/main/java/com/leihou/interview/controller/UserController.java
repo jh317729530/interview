@@ -42,6 +42,16 @@ public class UserController {
         userService.createUser(user);
         return "200";
     }
+
+    @RequestMapping("highConcurrencyCreate")
+    public String highConcurrencyCreate(@RequestParam String loginid, @RequestParam String password) {
+        User user = new User();
+        user.setLoginid(loginid);
+        user.setPassword(password);
+        user.setCreateTime(new Date());
+        userService.highConcurrencyCreate(user);
+        return "200";
+    }
 }
 
 
