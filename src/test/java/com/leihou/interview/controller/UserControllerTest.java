@@ -32,10 +32,14 @@ public class UserControllerTest {
      */
     private static long startTime = 0L;
 
+    private String method;
+
     @Before
     public void setup() {
         mockMvc = MockMvcBuilders.standaloneSetup(userController).build();
-        thread_num = 3000;
+        thread_num = 2000;
+        method = "highConcurrencyCreate";
+//        method = "create";
     }
 
 
@@ -56,7 +60,7 @@ public class UserControllerTest {
                 // 线程等待
                 try {
                     countDownLatch.await();
-                    mockMvc.perform(MockMvcRequestBuilders.get("/user/create").param("loginid",loginid).param("password","123456"))
+                    mockMvc.perform(MockMvcRequestBuilders.get("/user/"+method).param("loginid",loginid).param("password","123456"))
                             .andExpect(MockMvcResultMatchers.status().isOk());
 
                     long endTime = System.currentTimeMillis();
@@ -70,6 +74,6 @@ public class UserControllerTest {
         }
         // 启动多个线程
         countDownLatch.countDown();
-        Thread.sleep(10000);
+        Thread.sleep(20000);
     }
 }
