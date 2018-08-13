@@ -13,5 +13,10 @@ public class RabbitMqConfiguration {
         return new Queue("hello");
     }
 
+    @Bean
+    public Queue createUser() {
+        return new Queue("user.create");
+    }
+
 
 }
